@@ -41,11 +41,26 @@ const App: React.FC = () => {
   });
 
   const AI = (input: string) => {
-    return input
-      .replace("吗", "")
-      .replace("?", "!")
-      .replace("？", "！")
-      .replace("你", "我");
+    let output = "";
+    for (let c of input) {
+      if (c === "吗") {
+        output += "";
+      } else if (c === "?") {
+        output += "!";
+      } else if (c === "？") {
+        output += "！";
+      } else if (c === "你") {
+        output += "我";
+      } else if (c === "我") {
+        output += "你";
+      } else {
+        output += c;
+      }
+    }
+    if (!output.includes("!") && !output.includes("！")) {
+      output += "!";
+    }
+    return output;
   };
 
   return (
