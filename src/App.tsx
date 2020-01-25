@@ -16,7 +16,7 @@ const App: React.FC = () => {
       trigger: "1"
     }
   ];
-  const talks = 10;
+  const talks = 100;
   for (let i = 1; i < talks; i += 2) {
     steps.push({
       id: `${i}`,
